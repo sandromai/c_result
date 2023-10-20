@@ -2,7 +2,7 @@
 
 #include "result.h"
 
-typedef Result(int) int_result;
+typedef RESULT(int) int_result;
 
 int_result test_int(const int value) {
   if (value > 0) {
@@ -21,12 +21,12 @@ int main(void) {
     printf("Result data: %d\n", result_int_success.data);
   }
 
-  int_result result_int_err = test_int(-10);
+  int_result result_int_error = test_int(-10);
 
-  if (result_int_err.error != NULL) {
-    printf("Result error: %s\n", result_int_err.error);
+  if (result_int_error.error != NULL) {
+    printf("Result error: %s\n", result_int_error.error);
   } else {
-    printf("Result data: %d\n", result_int_err.data);
+    printf("Result data: %d\n", result_int_error.data);
   }
 
   return 0;
