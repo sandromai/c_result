@@ -1,1 +1,1 @@
-#define Result(errType, dataType) struct { errType error; dataType data; }
+#define Result(type) struct { type data; char *error; }
